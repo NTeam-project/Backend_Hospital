@@ -1,5 +1,12 @@
+**/resources/application-secret.yml
+
+.DS_Store
+._.DS_Store
+**/.DS_Store
+**/._.DS_Store
+
 HELP.md
-*.DS_Store/**
+!**/.DS_Store/**
 .gradle
 build/
 !gradle/wrapper/gradle-wrapper.jar
