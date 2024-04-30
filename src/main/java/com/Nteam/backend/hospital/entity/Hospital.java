@@ -1,12 +1,15 @@
 package com.Nteam.backend.hospital.entity;
 
-import lombok.*;
+import lombok.Getter;
+import lombok.Setter;
+
 import jakarta.persistence.*;
-import java.util.Set;
 import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Getter
+@Setter
 public class Hospital {
     @Id
     private String hospital_key;
@@ -33,5 +36,5 @@ public class Hospital {
             joinColumns = @JoinColumn(name = "hospital_key"),
             inverseJoinColumns = @JoinColumn(name = "nation_id")
     )
-    private Set<Nation> nations = new HashSet<>();
+    private Set<Nation> hospital_nations = new HashSet<>();
 }

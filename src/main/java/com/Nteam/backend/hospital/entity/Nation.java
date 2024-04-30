@@ -1,18 +1,21 @@
 package com.Nteam.backend.hospital.entity;
 
-import lombok.*;
-import jakarta.persistence.*;
-import java.util.Set;
-import java.util.HashSet;
+import lombok.Getter;
+import lombok.Setter;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
 @Entity
 @Getter
+@Setter
 public class Nation {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String name;
-
-    @ManyToMany(mappedBy = "nations")
-    private Set<Hospital> hospitals = new HashSet<>();
 }
+
