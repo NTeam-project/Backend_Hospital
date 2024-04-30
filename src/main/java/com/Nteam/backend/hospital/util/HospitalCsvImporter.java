@@ -33,7 +33,6 @@ public class HospitalCsvImporter {
             String line;
             while ((line = reader.readLine()) != null) {
                 String[] data = line.split(",(?=([^\"]*\"[^\"]*\")*[^\"]*$)", -1);
-                log.info("data = {}", (Object) data);
 
                 String hospitalKey = data[0];
                 String hospitalRegisterNum = data[1];
