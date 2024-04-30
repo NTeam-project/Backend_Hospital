@@ -7,7 +7,7 @@ import jakarta.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
-@Entity
+@Entity(name = "Hospital")
 @Getter
 @Setter
 public class Hospital {
