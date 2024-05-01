@@ -39,6 +39,7 @@ public class ReviewService {
         review.setComment(reviewDto.getComment());
         review.setRating(reviewDto.getRating());
         review.setHospital(hospital);
+        review.setReviewer(reviewDto.getReviewer());
 
         Review savedReview = reviewRepository.save(review);
         return convertToDto(savedReview);
@@ -50,6 +51,8 @@ public class ReviewService {
 
         existingReview.setComment(reviewDto.getComment());
         existingReview.setRating(reviewDto.getRating());
+        existingReview.setReviewer(reviewDto.getReviewer());
+
 
         Review updatedReview = reviewRepository.save(existingReview);
         return convertToDto(updatedReview);
@@ -64,6 +67,7 @@ public class ReviewService {
         reviewDto.setId(review.getId());
         reviewDto.setComment(review.getComment());
         reviewDto.setRating(review.getRating());
+        reviewDto.setReviewer(review.getReviewer());
         reviewDto.setHospitalId(review.getHospital().getHospital_key());
         return reviewDto;
     }

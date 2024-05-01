@@ -19,7 +19,10 @@ public class Review {
 
     private int rating;
 
+    private String reviewer; // 리뷰 작성자
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "hospital_id", nullable = false)
     private Hospital hospital;
 }
+
