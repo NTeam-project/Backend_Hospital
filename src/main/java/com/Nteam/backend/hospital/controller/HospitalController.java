@@ -14,7 +14,7 @@ import java.util.List;
 
 @Slf4j
 @RestController
-@RequestMapping("/hospital")
+@RequestMapping("/hospitals")
 public class HospitalController {
     private final HospitalService hospitalService;
     private final ReviewService reviewService;
@@ -35,7 +35,7 @@ public class HospitalController {
         return hospitalService.getAllHospitals();
     }
 
-    @GetMapping("/{key}") // key로 개별 조회
+    @GetMapping("/{key}") // hospital_key로 개별 조회
     public HospitalDto getHospitalByRegisterNum(@PathVariable("key") String key) {
 //        log.info("GET request received at /hospital/{}", registerNum);
         return hospitalService.getHospitalByRegisterNum(key);

@@ -11,5 +11,6 @@ public class ReviewDto {
     private String comment;
     private int rating; // 별점
     private String hospitalId;
+    private String reviewer;
 }
 
