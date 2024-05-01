@@ -13,8 +13,8 @@ public interface HospitalRepository extends JpaRepository<Hospital, String> {
     @Query("SELECT h FROM Hospital h WHERE h.hospital_gu = :gu")
     List<Hospital> findByHospital_gu(@Param("gu") String gu);
 
-    @Query("SELECT h FROM Hospital h WHERE h.hospital_register_num = :registerNum")
-    Hospital findHospitalByHospital_register_num(@Param("registerNum") String registerNum);
+    @Query("SELECT h FROM Hospital h WHERE h.hospital_key = :key")
+    Hospital findHospitalByHospital_register_num(@Param("key") String key);
 
     @Query("SELECT h FROM Hospital h WHERE h.hospital_category = :category")
     List<Hospital> findByHospital_category(@Param("category") String category);
