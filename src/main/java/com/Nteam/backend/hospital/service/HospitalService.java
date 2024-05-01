@@ -35,11 +35,11 @@ public class HospitalService {
                 .collect(Collectors.toList());
     }
 
-    // register 번호로 개별 조회
-    public HospitalDto getHospitalByRegisterNum(String registerNum) {
-        Hospital hospital = hospitalRepository.findHospitalByHospital_register_num(registerNum);
+    // 병원 key 번호로 개별 조회
+    public HospitalDto getHospitalByRegisterNum(String key) {
+        Hospital hospital = hospitalRepository.findHospitalByHospital_register_num(key);
         if (hospital == null) {
-            throw new IllegalArgumentException("병원을 찾을 수 없습니다. 등록 번호: " + registerNum);
+            throw new IllegalArgumentException("병원을 찾을 수 없습니다. 등록 번호: " + key);
         }
         return convertToDto(hospital);
     }
@@ -94,7 +94,6 @@ public class HospitalService {
                 .nations(hospital.getHospital_nations().stream().map(Nation::getName).collect(Collectors.toSet()))
                 .build();
     }
-
 
     public void saveHospitalAndNations(Hospital hospital) {
         hospitalRepository.save(hospital);
